@@ -15,6 +15,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = MandrillSmtpHeaders::VERSION
 
-  gem.add_dependency 'rails', '>= 3.0'
+  gem.add_dependency 'rails', '>= 2.3'
   gem.add_dependency 'multi_json', '~> 1.0'
 end

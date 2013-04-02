@@ -7,6 +7,8 @@ module MandrillSmtpHeaders
   end
 
   def self.mandatory_tags
-    @@mandatory_tags || []
+    @@mandatory_tags
   end
+
+  @@mandatory_tags = []
 end
