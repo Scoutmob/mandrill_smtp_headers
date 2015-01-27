@@ -33,9 +33,9 @@ module MandrillSmtpHeaders
     # template_name is the name of the stored template.
     # block_name is the name of the mc:edit region where the body of the SMTP generated message will be placed. Optional and defaults to "main".
     def mandrill_template(template_name, block_name = nil)
-      set_mandrill_header 'X-MC-Template', [template_name, block_name].compact.join('|') 
+      set_mandrill_header 'X-MC-Template', [template_name, block_name].compact.join('|')
     end
-    
+
     # Add dynamic data to replace mergetags that appear in your message content.
     # Multiple instances of this header may be added.
     # Recipient-specific values: add the _rcpt name with the recipient email address as the value, followed by other variable names and their values for that recipient.
@@ -84,7 +84,10 @@ module MandrillSmtpHeaders
       set_mandrill_header 'X-MC-SigningDomain', domain_name
     end
 
+    # Set a IP Pool to send this email through.
+    def mandrill_ip_pool(ip_pool_name)
+      set_mandrill_header 'X-MC-IPPool', ip_pool_name
+    end
+
   end
 end
-
-
