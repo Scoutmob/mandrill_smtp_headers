@@ -18,7 +18,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Adding this gem will provide convenience methods for setting Mandrill specific
+SMTP headers in your ActionMailer class.  For example:
+
+```ruby
+def confirm_email(order)
+  mandrill_tags :confirm_email
+  mandrill_track :clicks
+  mandrill_enable_autohtml
+
+  # setup confirmation email
+  # ...
+end
+```
 
 ## Contributing
 
